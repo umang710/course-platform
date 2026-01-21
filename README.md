@@ -1,16 +1,56 @@
-# React + Vite
+# Course Platform – Role-Based Frontend Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A role-based course management web application built using React, with a focus on clean UI standards, subtle UX interactions, and clear state-driven logic.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+This project demonstrates a frontend-only implementation of a course platform where trainers can manage courses and trainees can track their progress. The application emphasizes usability, visual clarity, and predictable interactions rather than heavy visual effects.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Trainer
+- Assign courses to trainees  
+- Unassign courses  
+- View when a course has been completed by a trainee  
+
+### Trainee
+- View assigned courses  
+- Mark courses as completed  
+- Clear visual feedback for completion status  
+
+---
+
+## UI and UX Approach
+
+- Subtle hover effects, transitions, and shadows to improve interaction feedback  
+- Neutral slate-based backgrounds combined with indigo for primary actions  
+- Green (emerald) used strictly for success and completion states  
+- Clear visual hierarchy with consistent spacing and alignment  
+- No visual clutter; focus on readability and usability  
+- Keyboard interaction support, including Enter key submission and visible focus states  
+
+Note: Some of these details are best experienced directly in the browser. Screenshots or videos may not fully reflect the live UI behavior.
+
+---
+
+## Tech Stack
+
+- React for component-based UI development  
+- React Router DOM for route-based navigation and role protection  
+- Tailwind CSS for utility-first styling and consistent design patterns  
+- shadcn/ui for accessible and composable UI components  
+- LocalStorage for lightweight state persistence  
+
+---
+
+## State Management
+
+- Course assignment and completion state is stored using a structured object in localStorage:
+  ```js
+  {
+    courseId: "assigned" | "completed"
+  }
